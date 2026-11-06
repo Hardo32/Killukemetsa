@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mtax - Tagavara arvutamise aplikatsioon</title>
+    <link rel="stylesheet" href="stiilid/pealehestiil.css" />
+    <link rel="stylesheet" href="stiilid/mtaxstiil.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="scriptid/mtaxImport.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="topnav">
+        <div class="topnavImgCont">
+          <img
+            src="pildid/mainlogo.png"
+            class="f__logo-img"
+            width="150"
+            height="150"
+          />
+        </div>
+        <div class="links">
+          <a class="link" href="index.html">Avaleht</a>
+          <a class="link" href="">Kontakt</a>
+          <a class="link" href="">Galerii</a>
+          <a class="link active" href="mtax.html">mTax</a>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="mtaxPea">
+        <h1>Mtax</h1>
+        <div class="mtaxPeaConts">
+          <h2>Kasvava metsa mahu arvutamine</h2>
+          <button id="abiBtn">Abi</button>
+        </div>
+        <div class="mtaxPeaConts">
+          <h3>Puuliigiti: Rinnaspindala (G) igal puuliigil</h3>
+          <button id="puuliigitiNupp">Arvuta puuliigiti</button>
+        </div>
+        <div class="mtaxPeaConts">
+          <h3>Keskmine: Puuliigiline koosseis silmajärgne</h3>
+          <button id="keskmineNupp">Arvuta keskmine</button>
+        </div>
+      </div>
+      <div class="mtaxKeha" id="koguKehaPl">
+        <h3>Mahu arvutamine puuliigiti</h3>
+        <div class="kokkuPuud">
+          <div class="kokkuPuuCont">
+            <p>Enamus plk</p>
+            <p class="labels" id="liigitiEnamusPlk"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>Pind/ha__.</p>
+            <input type="text" id="liigitiInputPind" value="0" />
+          </div>
+          <div class="kokkuPuuCont">
+            <p>G kokku__.</p>
+            <p class="labels" id="liigitiGkokku"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>T kokku__.</p>
+            <p class="labels" id="liigitiTkokku"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>M kokku/ha</p>
+            <p class="labels" id="liigitiMkokkuHa"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>M kokku/pind</p>
+            <p class="labels" id="liigitiMkokkuPind"></p>
+          </div>
+        </div>
+        <div class="koosseisCont">
+          <p>Koosseis</p>
+          <p class="koosseisLbl" id="liigitiKooseis"></p>
+        </div>
+        <div class="lisaPuuCont">
+          <p>Puu______.</p>
+          <p>H/6-35m__.</p>
+          <p>G/m2 ha__.</p>
+          <p>T________.</p>
+          <p>M/tm/ha__.</p>
+          <button id="liigitiLisapuuBtn">Lisa puu_.</button>
+        </div>
+        <div class="mtaxKeha" id="liigitiValipuuMainCont">
+          <div id="liigitiValiPuuContainer">
+            <div class="valiLiigitiPuuPanel">
+              <select name="liigitiPlkValik">
+                <option value="Ma">Ma</option>
+                <option value="Ku">Ku</option>
+                <option value="Ks">Ks</option>
+                <option value="Hb">Hb</option>
+                <option value="Lm">Lm</option>
+                <option value="Lv">Lv</option>
+                <option value="Ta">Ta</option>
+                <option value="Sa">Sa</option>
+                <option value="Va">Va</option>
+                <option value="Pn">Pn</option>
+              </select>
+              <input type="text" name="liigitiHinput" placeholder="-H-" />
+              <input type="text" name="liigitiGinput" placeholder="-G-" />
+              <p class="labels"></p>
+              <p class="labels"></p>
+              <button>Kinnita</button>
+            </div>
+          </div>
+          <div class="arvutaKokkuCont">
+            <button id="liigitiArvutaKokkuBtn">Arvuta kokku</button>
+            <button id="liigitiTuhistaBtn">Tühista</button>
+            <button id="liigitiAlgusesseBtn">Alusta uuesti</button>
+          </div>
+        </div>
+      </div>
+      <div class="mtaxKeha" id="koguKehaKesk">
+        <h3>Mahu arvutamine koosseisu järgi</h3>
+        <div class="kokkuPuud">
+          <div class="kokkuPuuCont">
+            <p>Enamus plk</p>
+            <p class="labels" id="keskEnamusPlk"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>Pind/ha__.</p>
+            <input type="text" id="keskInputPind" value="0" />
+          </div>
+          <div class="kokkuPuuCont">
+            <p>G Sisend__.</p>
+            <input type="text" id="keskGkokku" value="0" required />
+          </div>
+          <div class="kokkuPuuCont">
+            <p>T kokku__.</p>
+            <p class="labels" id="keskTkokku"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>M kokku/ha</p>
+            <p class="labels" id="keskMkokkuHa"></p>
+          </div>
+          <div class="kokkuPuuCont">
+            <p>M kokku/pind</p>
+            <p class="labels" id="keskMkokkuPind"></p>
+          </div>
+        </div>
+        <div class="koosseisCont">
+          <p>Koosseis</p>
+          <p class="koosseisLbl" id="keskKooseis"></p>
+        </div>
+        <div class="lisaPuuCont">
+          <p>__Puuliik_.</p>
+          <p>koefitsent(100%).</p>
+          <p>_H(6-35m)_.</p>
+          <button id="keskLisapuuBtn">Lisa puu_.</button>
+        </div>
+        <div class="mtaxKeha" id="keskValipuuMainCont">
+          <div id="keskValiPuuContainer">
+            <div class="valiKeskPuuPanel">
+              <select name="keskPlkValik">
+                <option value="Ma">Ma</option>
+                <option value="Ku">Ku</option>
+                <option value="Ks">Ks</option>
+                <option value="Hb">Hb</option>
+                <option value="Lm">Lm</option>
+                <option value="Lv">Lv</option>
+                <option value="Ta">Ta</option>
+                <option value="Sa">Sa</option>
+                <option value="Va">Va</option>
+                <option value="Pn">Pn</option>
+              </select>
+              <input
+                type="text"
+                name="keskKoefInput"
+                placeholder="Koef"
+                required
+              />
+              <input type="text" name="keskHinput" placeholder="-H-" required />
+              <button class="keskKinnitaBtns">Kinnita</button>
+            </div>
+          </div>
+          <div class="arvutaKokkuCont">
+            <button id="keskArvutaKokkuBtn">Arvuta kokku</button>
+            <button id="keskTuhistaBtn">Tühista</button>
+            <button id="keskAlgusesseBtn">Alusta uuesti</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="f_container">
+        <img
+          src="pildid/mainlogo.png"
+          class="f__logo-img"
+          width="150"
+          height="150"
+        />
+        <div class="address">
+          <strong>Killukemetsa</strong>
+          <p>Nõva küla, Lääne-Nigula vald</p>
+          <p>Läänemaa</p>
+        </div>
+        <div class="f__nav">
+          <a class="link" href="index.html">AVALEHT</a> |
+          <a class="link" href="">KONTAKT</a> |
+          <a class="link" href="">GALERII</a> |
+          <a class="link active" href="mtax.html">MTAX</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

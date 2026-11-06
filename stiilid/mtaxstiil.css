@@ -1,0 +1,213 @@
+:root {
+  --light-color: rgb(78, 119, 103);
+  --middle-color: rgb(76, 110, 97);
+  --dark-color: rgb(15, 41, 31);
+  --btnBack: rgb(202, 196, 169);
+  --btnHover: rgb(238, 233, 208);
+  --btnActive: rgb(241, 217, 96);
+  --articleSpacing: 62px;
+  --contSpacing: 36px;
+  --elemSpacing: 20px;
+  --smallSpacing: 10px;
+  --img-block: calc(150/16 * 1rem);
+  --p-fontsize: calc(10/16 * 1rem);
+  --h1-fontsize: calc(22/16 * 1rem);
+  --h2-fontsize: calc(18/16 * 1rem);
+  --h3-fontsize: calc(14/16 * 1rem);
+  @media (width >= calc(600/16*1rem)) {
+    --img-block: calc(480/16 * 1rem);
+    --h1-fontsize: calc(36/16 * 1rem);
+    --h2-fontsize: calc(28/16 * 1rem);
+    --h3-fontsize: calc(20/16 * 1rem);
+    --p-fontsize: calc(16/16 * 1rem);
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  text-align: center;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  background-color: rgb(187, 179, 145);
+}
+h1 {
+  color: var(--middle-color);
+  font-size: var(--h1-fontsize);
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+}
+h2 {
+  /* color: rgb(235, 240, 241); */
+  color: var(--middle-color);
+  font-size: var(--h2-fontsize);
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+}
+h3 {
+  color: var(--middle-color);
+  font-size: var(--h3-fontsize);
+}
+strong {
+  font-size: var(--font-size-small);
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+p,
+button,
+label {
+  color: var(--middle-color);
+  font-size: var(--p-fontsize);
+  font-weight: bold;
+}
+button {
+  padding: 8px 16px 8px 16px;
+  box-shadow: 1px 1px 2px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+  border-radius: 5px;
+  background-color: var(--btnBack);
+}
+button:hover {
+  background-color: var(--btnHover);
+  cursor: pointer;
+}
+button:active {
+  background-color: var(--btnActive);
+}
+button:disabled {
+  opacity: 0.3;
+}
+input,
+select {
+  color: var(--dark-color);
+  font-size: var(--p-fontsize);
+  field-sizing: content;
+  padding: 8px 16px 8px 16px;
+  box-shadow: 1px 1px 2px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+  border-radius: 5px;
+  background-color: var(--btnHover);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--contSpacing);
+}
+.mtaxPea {
+  order: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(207, 200, 167);
+  box-shadow: inset 1px 1px 10px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+  gap: var(--contSpacing);
+  padding: var(--elemSpacing);
+}
+.mtaxPeaConts {
+  background-color: rgb(207, 200, 167);
+  box-shadow: inset 1px 1px 10px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+  padding: 0 var(--elemSpacing);
+  min-height: 50px;
+  display: flex;
+  gap: var(--contSpacing);
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.mtaxPeaConts button {
+  min-width: 160px;
+}
+.mtaxKeha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--elemSpacing);
+  padding: var(--elemSpacing);
+  background-color: rgb(207, 200, 167);
+  box-shadow: inset 1px 1px 10px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+}
+#koguKehaPl {
+  order: 2;
+}
+#koguKehaKesk {
+  order: 3;
+}
+.labels {
+  padding: 8px 16px 8px 16px;
+  box-shadow: 1px 1px 2px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+  border-radius: 5px;
+  background-color: var(--btnBack);
+  min-height: var(--contSpacing);
+}
+.kokkuPuud {
+  display: flex;
+  gap: var(--elemSpacing);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.kokkuPuuCont {
+  display: flex;
+  flex-direction: column;
+  gap: var(--smallSpacing);
+}
+.koosseisCont {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.koosseisLbl {
+  min-height: 24px;
+  min-width: 250px;
+  padding: 4px 16px 4px 16px;
+  box-shadow: 1px 1px 2px 1px rgba(110, 106, 84);
+  border: 2px solid rgb(110, 106, 84);
+  border-radius: 5px;
+  background-color: var(--btnBack);
+}
+.lisaPuuCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--elemSpacing);
+}
+.valiLiigitiPuuPanel {
+  display: flex;
+  gap: var(--elemSpacing);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.valiKeskPuuPanel {
+  display: flex;
+  gap: var(--elemSpacing);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.valiLiigitiPuuPanel > * {
+  min-width: 85px;
+}
+.valiKeskPuuPanel > * {
+  min-width: 85px;
+}
+.arvutaKokkuCont {
+  display: flex;
+  justify-content: center;
+  gap: var(--smallSpacing);
+}
